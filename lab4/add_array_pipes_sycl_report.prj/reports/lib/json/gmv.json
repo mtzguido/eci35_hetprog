@@ -1,0 +1,285 @@
+{
+  "nodes":
+  [
+    {
+      "name":"DDR"
+      , "id":108
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Interleaving":"Yes"
+          , "Interleave Size":"1024 bytes"
+          , "Channels":"2 channels"
+          , "Maximum bandwidth the BSP can deliver":"34133.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+          , "Channel DDR Width (bits)":"512, 512"
+        }
+      ]
+      , "type":"memsys"
+      , "children":
+      [
+        {
+          "name":"channel 0"
+          , "id":110
+          , "type":"bb"
+        }
+        , {
+          "name":"channel 1"
+          , "id":111
+          , "type":"bb"
+        }
+      ]
+    }
+    , {
+      "name":"Memory Controller"
+      , "id":109
+      , "parent":"108"
+      , "bw":"34133.00"
+      , "num_channels":"2"
+      , "interleave":"1"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Maximum bandwidth the BSP can deliver":"34133.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+        }
+      ]
+      , "type":"bb"
+    }
+    , {
+      "name":"Global Memory Interconnect"
+      , "id":112
+      , "parent":"108"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"SHARE"
+          , "id":113
+          , "type":"arb"
+        }
+        , {
+          "name":"Write Interconnect"
+          , "id":116
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Name":"DDR"
+              , "Interconnect Style":"tree"
+              , "Writes":"1"
+              , "User specified force-single-store-ring flag":"False"
+              , "Store Rings":"2"
+            }
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Read Interconnect"
+          , "id":114
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Name":"DDR"
+              , "Interconnect Style":"tree"
+              , "Reads":"2"
+            }
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Read Interconnect Router"
+          , "id":115
+          , "details":
+          [
+            {
+              "type":"table"
+              , "User specified num-reorder flag":"Unset"
+            }
+          ]
+          , "type":"memsys"
+          , "children":
+          [
+            {
+              "name":"Bus 0"
+              , "id":122
+              , "type":"memsys"
+            }
+            , {
+              "name":"Bus 1"
+              , "id":123
+              , "type":"memsys"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Global Memory Loads"
+      , "id":117
+      , "parent":"108"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"LD"
+          , "id":118
+          , "kwidth":"32"
+          , "mwidth":"512"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"5"
+              , "Latency":"2 cycles"
+              , "Width":"32 bits"
+              , "DDR Width":"512 bits"
+              , "Uses Caching":"No"
+              , "LSU Style":"PREFETCHING"
+              , "Kernel":"CopiaA"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/ext/intel/pipes.hpp"
+                , "line":75
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":119
+          , "kwidth":"32"
+          , "mwidth":"512"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"5"
+              , "Latency":"2 cycles"
+              , "Width":"32 bits"
+              , "DDR Width":"512 bits"
+              , "Uses Caching":"No"
+              , "LSU Style":"PREFETCHING"
+              , "Kernel":"CopiaB"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/ext/intel/pipes.hpp"
+                , "line":75
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"Global Memory Stores"
+      , "id":120
+      , "parent":"108"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"ST"
+          , "id":121
+          , "kwidth":"32"
+          , "mwidth":"512"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"10"
+              , "Latency":"2 cycles"
+              , "Width":"32 bits"
+              , "DDR Width":"512 bits"
+              , "Uses Write Ack":"No"
+              , "LSU Style":"BURST-COALESCED"
+              , "Kernel":"Suma"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/build/lab4/add_array_pipes_sycl.cc"
+                , "line":87
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":110
+      , "to":109
+    }
+    , {
+      "from":109
+      , "to":110
+    }
+    , {
+      "from":111
+      , "to":109
+    }
+    , {
+      "from":109
+      , "to":111
+    }
+    , {
+      "from":114
+      , "to":113
+    }
+    , {
+      "from":116
+      , "to":113
+    }
+    , {
+      "from":113
+      , "to":109
+    }
+    , {
+      "from":118
+      , "to":114
+    }
+    , {
+      "from":119
+      , "to":114
+    }
+    , {
+      "from":121
+      , "to":116
+    }
+    , {
+      "from":109
+      , "to":122
+    }
+    , {
+      "from":109
+      , "to":123
+    }
+    , {
+      "from":122
+      , "to":118
+      , "reverse":1
+    }
+    , {
+      "from":123
+      , "to":119
+      , "reverse":1
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Compiler Command: aoc -o /tmp/add_array_pipes_sycl-c65e82-adaed5.aocr /tmp/add_array_pipes_sycl-8a68d5-2a7cc8.spv -sycl -rtl -dep-files=/tmp/add_array_pipes_sycl-b5c3a7.d -output-report-folder=/home/clinux01/eci35_hetprog/build/add_array_pipes_sycl_report.prj -g -hardware -board=intel_a10gx_pac:pac_a10
+System name: add_array_pipes_sycl_c65e82_adaed5
+

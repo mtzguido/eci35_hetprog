@@ -1,0 +1,111 @@
+{
+  "nodes":
+  [
+    {
+      "name":"CopiaA"
+      , "id":1
+      , "type":"kernel"
+      , "children":
+      [
+        {
+          "name":"CopiaA.B0"
+          , "id":4
+          , "type":"bb"
+        }
+        , {
+          "name":"CopiaA.B1"
+          , "id":5
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 0"
+              , "id":15
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"CopiaA.B2"
+          , "id":6
+          , "type":"bb"
+        }
+      ]
+    }
+    , {
+      "name":"CopiaB"
+      , "id":2
+      , "type":"kernel"
+      , "children":
+      [
+        {
+          "name":"CopiaB.B0"
+          , "id":7
+          , "type":"bb"
+        }
+        , {
+          "name":"CopiaB.B1"
+          , "id":8
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 1"
+              , "id":21
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"CopiaB.B2"
+          , "id":9
+          , "type":"bb"
+        }
+      ]
+    }
+    , {
+      "name":"Suma"
+      , "id":3
+      , "type":"kernel"
+      , "children":
+      [
+        {
+          "name":"Suma.B0"
+          , "id":10
+          , "type":"bb"
+        }
+        , {
+          "name":"Suma.B1"
+          , "id":11
+          , "type":"bb"
+          , "children":
+          [
+            {
+              "name":"Cluster 2"
+              , "id":27
+              , "type":"cluster"
+            }
+            , {
+              "name":"Cluster 3"
+              , "id":30
+              , "type":"cluster"
+            }
+            , {
+              "name":"Cluster 4"
+              , "id":31
+              , "type":"cluster"
+            }
+          ]
+        }
+        , {
+          "name":"Suma.B2"
+          , "id":12
+          , "type":"bb"
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+  ]
+}
