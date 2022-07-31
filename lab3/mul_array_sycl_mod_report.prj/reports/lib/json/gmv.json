@@ -1,0 +1,291 @@
+{
+  "nodes":
+  [
+    {
+      "name":"DDR"
+      , "id":120
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Interleaving":"Yes"
+          , "Interleave Size":"4096 bytes"
+          , "Channels":"4 channels"
+          , "Maximum bandwidth the BSP can deliver":"76800.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+          , "Channel DDR Width (bits)":"512, 512, 512, 512"
+        }
+      ]
+      , "type":"memsys"
+      , "children":
+      [
+        {
+          "name":"channel 0"
+          , "id":122
+          , "type":"bb"
+        }
+        , {
+          "name":"channel 1"
+          , "id":123
+          , "type":"bb"
+        }
+        , {
+          "name":"channel 2"
+          , "id":124
+          , "type":"bb"
+        }
+        , {
+          "name":"channel 3"
+          , "id":125
+          , "type":"bb"
+        }
+      ]
+    }
+    , {
+      "name":"Memory Controller"
+      , "id":121
+      , "parent":"120"
+      , "bw":"76800.00"
+      , "num_channels":"4"
+      , "interleave":"1"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Maximum bandwidth the BSP can deliver":"76800.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+        }
+      ]
+      , "type":"bb"
+    }
+    , {
+      "name":"Global Memory Interconnect"
+      , "id":126
+      , "parent":"120"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"SHARE"
+          , "id":127
+          , "type":"arb"
+        }
+        , {
+          "name":"Write Interconnect"
+          , "id":130
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Name":"DDR"
+              , "Interconnect Style":"ring"
+              , "Writes":"1"
+              , "User specified force-single-store-ring flag":"False"
+              , "Store Rings":"4"
+            }
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Read Interconnect"
+          , "id":128
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Name":"DDR"
+              , "Interconnect Style":"ring"
+              , "Reads":"1"
+            }
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Read Interconnect Router"
+          , "id":129
+          , "details":
+          [
+            {
+              "type":"table"
+              , "User specified num-reorder flag":"Unset"
+            }
+          ]
+          , "type":"memsys"
+          , "children":
+          [
+            {
+              "name":"Bus 0"
+              , "id":135
+              , "type":"memsys"
+            }
+            , {
+              "name":"Bus 1"
+              , "id":136
+              , "type":"memsys"
+            }
+            , {
+              "name":"Bus 2"
+              , "id":137
+              , "type":"memsys"
+            }
+            , {
+              "name":"Bus 3"
+              , "id":138
+              , "type":"memsys"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Global Memory Loads"
+      , "id":131
+      , "parent":"120"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"LD"
+          , "id":132
+          , "kwidth":"256"
+          , "mwidth":"512"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"36"
+              , "Latency":"775 cycles"
+              , "Width":"256 bits"
+              , "DDR Width":"512 bits"
+              , "Uses Caching":"No"
+              , "LSU Style":"BURST-NON-ALIGNED"
+              , "Kernel":"naive"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"Global Memory Stores"
+      , "id":133
+      , "parent":"120"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"ST"
+          , "id":134
+          , "kwidth":"32"
+          , "mwidth":"512"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"49"
+              , "Latency":"1 cycle"
+              , "Width":"32 bits"
+              , "DDR Width":"512 bits"
+              , "Uses Write Ack":"No"
+              , "LSU Style":"BURST-COALESCED"
+              , "Kernel":"naive"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":66
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":122
+      , "to":121
+    }
+    , {
+      "from":121
+      , "to":122
+    }
+    , {
+      "from":123
+      , "to":121
+    }
+    , {
+      "from":121
+      , "to":123
+    }
+    , {
+      "from":124
+      , "to":121
+    }
+    , {
+      "from":121
+      , "to":124
+    }
+    , {
+      "from":125
+      , "to":121
+    }
+    , {
+      "from":121
+      , "to":125
+    }
+    , {
+      "from":128
+      , "to":127
+    }
+    , {
+      "from":130
+      , "to":127
+    }
+    , {
+      "from":127
+      , "to":121
+    }
+    , {
+      "from":132
+      , "to":128
+    }
+    , {
+      "from":134
+      , "to":130
+    }
+    , {
+      "from":121
+      , "to":135
+    }
+    , {
+      "from":121
+      , "to":136
+    }
+    , {
+      "from":121
+      , "to":137
+    }
+    , {
+      "from":121
+      , "to":138
+    }
+    , {
+      "from":135
+      , "to":132
+      , "reverse":1
+    }
+  ]
+}

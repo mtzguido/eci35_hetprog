@@ -1,0 +1,291 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"'acc'"
+      , "id":108
+      , "src":"38"
+      , "dst":"40"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"naive.B1"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"'acc'"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"44"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"480.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"f32 *(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                  , "line":"60"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"'acc'"
+          , "id":38
+          , "start":"815.00"
+          , "parent":"_ZTS5naive.B1"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":51
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":39
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":42
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":45
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":48
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":54
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":57
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 *"
+          , "id":60
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":40
+          , "end":"815.00"
+          , "parent":"_ZTS5naive.B1"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                , "line":60
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":38
+          , "to":39
+        }
+        , {
+          "from":39
+          , "to":40
+        }
+        , {
+          "from":38
+          , "to":40
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

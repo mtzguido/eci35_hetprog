@@ -1,0 +1,3 @@
+Compiler Command: aoc -o /tmp/mul_array_sycl-7fe361-388bc7.aocr /tmp/mul_array_sycl-24388b-a2d27d.spv -sycl -rtl -dep-files=/tmp/mul_array_sycl-3a30e0.d -output-report-folder=mul_array_sycl_report.prj -g -hardware -board=intel_s10sx_pac:pac_s10
+System name: mul_array_sycl_7fe361_388bc7
+

@@ -1,0 +1,685 @@
+{
+  "columns":
+  ["", "ALUTs", "FFs", "RAMs", "DSPs", "MLABs", "Details"]
+  , "debug_enabled":"true"
+  , "type":"module"
+  , "total_percent":
+  [49.7806, 25.6965, 25.5855, 26.7469, 22.6736]
+  , "total":
+  [479439, 954975, 3135, 1306, 6]
+  , "name":"Kernel System"
+  , "max_resources":
+  [1866240, 3732480, 11721, 5760, 93312]
+  , "children":
+  [
+    {
+      "name":"Static Partition"
+      , "type":"partition"
+      , "children":
+      [
+        {
+          "name":"Board interface"
+          , "type":"resource"
+          , "data":
+          [466792, 928428, 3039, 1291, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Platform interface logic."
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Global interconnect"
+      , "type":"resource"
+      , "data":
+      [7490, 15614, 52, 0, 0]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Global interconnect for 1 global load and 1 global store."
+        }
+        , {
+          "type":"brief"
+          , "text":"For 1 global load and 1 global store."
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Global Memory Interconnect"
+              , "link":"file:////media/libre/oneapi/compiler/2022.1.0/linux/lib/oclfpga/aoc_help_pages/hnj1476724450050.html"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"System description ROM"
+      , "type":"resource"
+      , "data":
+      [2, 71, 2, 0, 0]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"This read-only memory contains information for the host about the system and about each kernel in the system, including kernel names, arguments, and attributes. The system description ROM ensures that the binary image on the FPGA is compatible with the host program."
+        }
+        , {
+          "type":"brief"
+          , "text":"Contains information for the host."
+        }
+      ]
+    }
+    , {
+      "name":"naive"
+      , "compute_units":1
+      , "type":"function"
+      , "total_percent":
+      [0.558109, 0.282654, 0.291013, 0.358331, 0.260417]
+      , "total_kernel_resources":
+      [5155, 10862, 42, 15, 6]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Number of compute units: 1"
+        }
+        , {
+          "type":"brief"
+          , "text":"1 compute unit."
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"Function overhead"
+          , "type":"resource"
+          , "data":
+          [1463, 1467, 0, 0, 6]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Kernel dispatch logic."
+            }
+            , {
+              "type":"brief"
+              , "text":"Kernel dispatch logic."
+            }
+          ]
+        }
+        , {
+          "name":"Private Variable: \n - 'acc' (mul_array_sycl_mod.cc:44)"
+          , "type":"resource"
+          , "data":
+          [192, 512, 0, 0, 0]
+          , "debug":
+          [
+            [
+              {
+                "filename":"mul_array_sycl_mod.cc"
+                , "line":44
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Type: Register"
+            }
+            , {
+              "type":"text"
+              , "text":"8 registers of width 32 bits"
+            }
+            , {
+              "type":"brief"
+              , "text":"Register,\n8 regs, 32 width"
+            }
+          ]
+        }
+        , {
+          "name":"Private Variable: \n - 'i' (mul_array_sycl_mod.cc:56)"
+          , "type":"resource"
+          , "data":
+          [10, 128, 0, 0, 0]
+          , "debug":
+          [
+            [
+              {
+                "filename":"mul_array_sycl_mod.cc"
+                , "line":56
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Type: Register"
+            }
+            , {
+              "type":"text"
+              , "text":"1 register of width 32 bits"
+            }
+            , {
+              "type":"brief"
+              , "text":"Register,\n1 reg, 32 width"
+            }
+          ]
+        }
+        , {
+          "name":"naive.B0"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [1, 127, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1, 62, 0, 0, 0]
+                }
+                , {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:56"
+                  , "type":"resource"
+                  , "data":
+                  [0, 65, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":56
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [13, 12, 1, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"naive.B1"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [330, 1528, 2, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [330, 1272, 2, 0, 0]
+                }
+                , {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:44"
+                  , "type":"resource"
+                  , "data":
+                  [0, 128, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":44
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:60"
+                  , "type":"resource"
+                  , "data":
+                  [0, 128, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":60
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [383, 305, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:44"
+                  , "type":"resource"
+                  , "data":
+                  [128, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":44
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:56"
+                  , "type":"resource"
+                  , "data":
+                  [62, 305, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":56
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:60"
+                  , "type":"resource"
+                  , "data":
+                  [193, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":60
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [68, 97, 3, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:56"
+                  , "type":"resource"
+                  , "data":
+                  [136, 2, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":56
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"1-bit And"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"64-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [67, 1, 0, 0, 0]
+                    }
+                    , {
+                      "name":"65-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [68, 1, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:60"
+                  , "type":"resource"
+                  , "data":
+                  [1763, 3567, 16, 8, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":60
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":8
+                      , "data":
+                      [384, 768, 0, 8, 0]
+                    }
+                    , {
+                      "name":"65-bit Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1314, 2734, 16, 0, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"brief"
+                          , "text":"Burst-coalesced non-aligned LSU"
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced non-aligned LSU.  Use Dynamic Profiler to determine performance impact of this LSU."
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"naive.B2"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [9, 209, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [9, 209, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [61, 108, 3, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"handler.hpp:1079 > mul_array_sycl_mod.cc:66"
+                  , "type":"resource"
+                  , "data":
+                  [726, 2800, 17, 7, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/handler.hpp"
+                        , "line":1079
+                      }
+                      , {
+                        "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_mod.cc"
+                        , "line":66
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":7
+                      , "data":
+                      [336, 672, 0, 7, 0]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [390, 2128, 17, 0, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced LSU"
+                        }
+                        , {
+                          "type":"brief"
+                          , "text":"Burst-coalesced LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

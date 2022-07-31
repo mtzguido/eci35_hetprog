@@ -1,0 +1,330 @@
+{
+  "nodes":
+  [
+    {
+      "name":"naive"
+      , "id":67
+      , "type":"kernel"
+      , "children":
+      [
+        {
+          "name":"On-chip Memory"
+          , "id":68
+          , "type":"memtype"
+          , "children":
+          [
+            {
+              "name":"_arg_"
+              , "id":69
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_optimized.cc"
+                          , "line":"0"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"Unknown Name #0"
+              , "id":70
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_optimized.cc"
+                          , "line":"41"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_optimized.cc"
+                    , "line":41
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"AccessRange"
+              , "id":71
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                          , "line":"908"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                    , "line":908
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"MemRange"
+              , "id":72
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                          , "line":"909"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                    , "line":909
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"Offset"
+              , "id":73
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                          , "line":"909"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                    , "line":909
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"acc"
+              , "id":74
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_optimized.cc"
+                          , "line":"42"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/clinux01/eci35_hetprog/lab3/mul_array_sycl_optimized.cc"
+                    , "line":42
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"Id"
+              , "id":75
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                          , "line":"835"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                    , "line":835
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"Id (inline#0)"
+              , "id":76
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                          , "line":"835"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                    , "line":835
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+            , {
+              "name":"Id (inline#1)"
+              , "id":77
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Declared at":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"%L"
+                      , "links":
+                      [
+                        {
+                          "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                          , "line":"835"
+                        }
+                      ]
+                    }
+                  ]
+                  , "Additional information":"This variable is carried through the pipeline in registers (rather than being stored in RAM)"
+                }
+              ]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/media/libre/oneapi/compiler/2022.1.0/linux/bin-llvm/../include/sycl/CL/sycl/accessor.hpp"
+                    , "line":835
+                  }
+                ]
+              ]
+              , "type":"reg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+  ]
+}
